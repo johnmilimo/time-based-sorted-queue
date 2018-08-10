@@ -14,6 +14,21 @@ password: admin
 $ bash run.sh
 ```
 
-When the application starts, it schedules 50,000 messages for processing after 20minutes.
-It then schedules another batch of 5 messages for processing after 1 second.
-For more details see https://github.com/johnmilimo/Messaging-with-JMS/blob/master/src/main/java/com/example/jms/JmsApplication.java
+## Schedule messages
+
+1. First, schedule messages with a long delay e.g 20 minutes
+    Number of messages : 10000 <br />
+    Delay: 20 minutes <br />
+    ```
+    $ curl http://localhost:8080/schedule?totalMessages=10000&delay=1200000
+    ```
+2. Secondly, schedule messages with a short delay e.g 2 seconds. <br />
+    Number of messages : 10 <br />
+    Delay: 2 seconds <br />
+
+    ```
+    $ curl http://localhost:8080/schedule?totalMessages=10&delay=2000
+    ```
+
+The point is to test and see if messages with short schedule go out at there expected time, or
+they get delayed by the long queue of the first batch of messages with long delay.
