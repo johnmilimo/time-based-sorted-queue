@@ -1,10 +1,9 @@
-package com.example.jms;
+package com.example.jms.entities;
 
 public class Email {
 
     private String to;
     private String body;
-    private long deliveryDelay = -1;
 
     public Email() {
     }
@@ -12,12 +11,6 @@ public class Email {
     public Email(String to, String body) {
         this.to = to;
         this.body = body;
-    }
-
-    public Email(String to, String body, long deliveryDelay) {
-        this.to = to;
-        this.body = body;
-        this.deliveryDelay = deliveryDelay;
     }
 
     public String getTo() {
@@ -34,14 +27,6 @@ public class Email {
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    public long getDeliveryDelay() {
-        return deliveryDelay;
-    }
-
-    public void setDeliveryDelay(long deliveryDelay) {
-        this.deliveryDelay = deliveryDelay;
     }
 
     @Override
