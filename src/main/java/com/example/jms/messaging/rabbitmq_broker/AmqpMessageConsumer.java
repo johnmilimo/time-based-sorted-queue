@@ -1,18 +1,14 @@
 package com.example.jms.messaging.rabbitmq_broker;
 
-import java.util.concurrent.CountDownLatch;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AmqpMessageConsumer {
-    private CountDownLatch latch = new CountDownLatch(1);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AmqpMessageConsumer.class);
 
     public void receiveMessage(String message) {
-        System.out.println("Received <" + message + ">");
-        latch.countDown();
-    }
-
-    public CountDownLatch getLatch() {
-        return latch;
+        LOGGER.info("Received <" + message + ">");
     }
 }

@@ -1,14 +1,11 @@
 package com.example.jms.controllers;
 
-import com.example.jms.entities.Email;
-import com.example.jms.messaging.MessageProducer;
+import com.example.jms.messaging.activemq_broker.MessageProducer;
 import com.example.jms.messaging.rabbitmq_broker.AmqpMessageProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.web.bind.annotation.*;
 import com.google.gson.Gson;
-
-import java.util.List;
 
 @RestController
 @EnableAutoConfiguration

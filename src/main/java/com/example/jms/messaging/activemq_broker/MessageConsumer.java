@@ -1,4 +1,4 @@
-package com.example.jms.messaging;
+package com.example.jms.messaging.activemq_broker;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.example.jms.messaging;
+package com.example.jms.messaging.activemq_broker;
 
 import org.apache.activemq.ScheduledMessage;
 import org.slf4j.Logger;
