@@ -20,14 +20,14 @@ $ bash run.sh
     Number of messages : 10000 <br />
     Delay: 20 minutes <br />
     ```
-    $ curl http://localhost:8080/schedule?totalMessages=10000&delay=1200000
+    $ curl 'http://localhost:8080/schedule?totalMessages=10000&delay=1200000'
     ```
 2. Secondly, schedule messages with a short delay e.g 2 seconds. <br />
     Number of messages : 10 <br />
     Delay: 2 seconds <br />
 
     ```
-    $ curl http://localhost:8080/schedule?totalMessages=10&delay=2000
+    $ curl 'http://localhost:8080/schedule?totalMessages=10&delay=2000'
     ```
 
 The point is to test and see if messages with short schedule go out at their expected time, or
