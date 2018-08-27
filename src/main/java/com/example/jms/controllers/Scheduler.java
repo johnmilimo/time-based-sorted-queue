@@ -1,5 +1,6 @@
 package com.example.jms.controllers;
 
+import com.example.jms.entities.Email;
 import com.example.jms.messaging.activemq_broker.MessageProducer;
 import com.example.jms.messaging.rabbitmq_broker.AmqpMessageProducer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,8 @@ public class Scheduler {
     @Autowired
     MessageProducer messageProducer;
 
-    @Autowired
-    AmqpMessageProducer amqpMessageProducer;
+//    @Autowired
+//    AmqpMessageProducer amqpMessageProducer;
 
     @Autowired
     private Gson gson;
@@ -24,9 +25,9 @@ public class Scheduler {
     String home(@RequestParam("totalMessages") long totalMessages, @RequestParam("delay") long delay) throws Exception {
 
         for(long i=0; i<=totalMessages; i++){
-//            Email email = new Email("john"+i, "Niaje"+i);
-//            messageProducer.sendEmail("mailbox", gson.toJson(email), delay);
-            amqpMessageProducer.run(new String[]{"Hey Niaje!"});
+            Email email = new Email("john"+i, "Niaje"+i);
+            messageProducer.sendEmail("mailbox", gson.toJson(email), delay);
+//            amqpMessageProducer.run(new String[]{"Hey Niaje!"});
 
         }
         return "Hello World!"+totalMessages;
