@@ -30,5 +30,5 @@ $ bash run.sh
     $ curl http://localhost:8080/schedule?totalMessages=10&delay=2000
     ```
 
-The point is to test and see if messages with short schedule go out at there expected time, or
+The point is to test and see if messages with short schedule go out at their expected time, or
 they get delayed by the long queue of the first batch of messages with long delay.
