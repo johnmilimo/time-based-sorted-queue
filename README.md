@@ -30,5 +30,4 @@ $ bash run.sh
     $ curl 'http://localhost:8080/schedule?totalMessages=10&delay=2000'
     ```
 
-The point is to test and see if messages with short schedule go out at their expected time, or
-they get delayed by the long queue of the first batch of messages with long delay.
+The point is to demonstrate that activeMQ schedule queue is time-based in the sense that items are ordered based on their delay, hence messages with the shortest delay take precedence.
